@@ -1,0 +1,20 @@
+@import 'caller';
+
+.header{
+  @include border-top($border-radius);
+  padding: 3% 2% !important;
+  margin: {
+    top: 10%;
+  }
+  background: {
+    image: url($bg-top);
+    color: #000;
+    position: 70% 40%;
+  }
+  p{
+    text: {
+      align: right;
+    }
+    color: $font-title;
+  }
+}

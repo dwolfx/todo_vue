@@ -1,0 +1,19 @@
+@mixin center($size, $margin, $padding){
+  position: relative;
+  width: $size;
+  margin: $margin;
+  padding: $padding;
+}
+@mixin font($size, $margin, $padding){
+  font-size: $size;
+  padding: $padding;
+  margin: $margin;
+}
+@mixin border-top($value){
+  border-top-left-radius: $value;
+  border-top-right-radius: $value;
+}
+@mixin border-bottom($value){
+  border-bottom-left-radius: $value;
+  border-bottom-right-radius: $value;
+}

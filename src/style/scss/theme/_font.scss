@@ -1,0 +1,29 @@
+@import 'variable';
+
+
+h1{
+  @include font(3.5em, 0, 0);
+  color: rgba($font-title, .9%);
+}
+h2{
+  @include font(2em, 0, 0);
+  color: darken($font-title, 5%);
+}
+i{
+  color: $font-content;
+}
+p{
+  @include font(1em, 0,0);
+  color: $font-content;
+}
+
+ul, li{
+  @extend p;
+  list-style: none;
+}
+a{
+  @extend p;
+  text-decoration: none;
+  color: transparency($font-content, 5%);
+}
+
