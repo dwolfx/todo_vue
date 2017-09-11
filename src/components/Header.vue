@@ -4,7 +4,7 @@
       <v-flex header md8 offset-md2>
         <h2>{{title}}</h2>
         <p>Tarefas: {{valueTask}}</p>
-        <p>Concluido: {{valueCompleted}}%</p>
+        <p>Concluido: {{ (valueTask ? 100 * (valueCompleted / valueTask) : 0).toFixed(0) }}%</p>
       </v-flex>
     </v-layout>
   </div>

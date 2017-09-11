@@ -22,7 +22,7 @@
               <div
                 class="content-item"
                 :class="{ checked: task.status }"
-                @click="task.status = !task.status" >
+                @click="status(index)" >
                 <i v-if="task.status" class='material-icons'>check_box</i>
                 <i v-else class='material-icons'>check_box_outline_blank</i>
                 <p :class="{ checked: task.status }"  class="cont-task">{{task.item}}</p>
@@ -74,6 +74,10 @@
         this.tasks.splice(index, 1);
         this.updateStorage();
       },
+      status(index){
+        this.tasks[index].status = !this.tasks[index].status;
+        this.updateStorage();
+      },
       create(event) {
         const task = {
           item: event.target.elements[0].value,
@@ -89,6 +93,19 @@
         };
         const json = JSON.stringify(x);
         localStorage.setItem('todo', json);
+        console.log(this.tasksDone);
+      },
+    },
+    computed: {
+      tasksDone() {
+        return this.tasks.filter((elem) => {
+          return elem.status;
+        }).length;
+      }
+    },
+    watch: {
+      tasksDone() {
+        this.$emit('tasksChanged', { tasksDone: this.tasksDone, totalTasks: this.tasks.length });
       }
     },
     mounted() {

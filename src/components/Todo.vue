@@ -3,11 +3,11 @@
     <menu-top></menu-top>
     <header-site
       title="Lista de Tarefas do Victor"
-      valueTask='0'
-      valueCompleted='0'>
+      :valueTask="totalTasks"
+      :valueCompleted="tasksDone">
     </header-site>
 
-    <list-todo></list-todo>
+    <list-todo v-on:tasksChanged="tasksListener"></list-todo>
 
   </div>
 
@@ -26,8 +26,17 @@ export default {
     HeaderSite,
     ListTodo
   },
+  data() {
+    return {
+      tasksDone: 0,
+      totalTasks: 0
+    }
+  },
   methods: {
-
+    tasksListener(e) {
+      this.tasksDone = e.tasksDone;
+      this.totalTasks = e.totalTasks;
+    }
   }
 }
 </script>
