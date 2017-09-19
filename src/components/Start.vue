@@ -7,8 +7,13 @@
           <p>Vue Examples</p>
         </v-layout>
         <v-layout row md12 menu>
-          <a href="/todo">
-            <v-btn class="btn-todo">ToDo</v-btn>
+          <a :href="item.link" v-for="item in buttons" :key='item.text'>
+            <v-btn :class='item.btn'>
+              <v-icon>
+                {{ item.icon }}
+              </v-icon>
+              {{ item.text }}
+            </v-btn>
           </a>
         </v-layout>
       </v-flex>
@@ -16,7 +21,24 @@
   </div>
 </template>
 <script>
-
+  export default {
+    data: () => ({
+      buttons: [
+        {
+          icon: 'book',
+          text: 'ToDo List',
+          link: '/todo',
+          btn: 'btn-todo'
+        },
+        {
+          icon: 'cached',
+          text: 'Pig Game',
+          link: '/pig',
+          btn: 'btn-pig'
+        }
+      ]
+    })
+  }
 </script>
 <style lang="scss" scoped src="../style/scss/start.scss">
 

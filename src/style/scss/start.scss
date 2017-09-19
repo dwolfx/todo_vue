@@ -29,8 +29,18 @@
     .menu{
       width: 100%;
       text-align: center;
+      .btn{
+        i{
+          color: $font-btn-white;
+          padding-right: 5px;
+        }
+      }
       .btn-todo{
         background-color: $bg-todo;
+        color: $font-btn-white;
+      }
+      .btn-pig{
+        background-color: $bg-pig;
         color: $font-btn-white;
       }
     }

@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Todo from '@/components/Todo'
 import Start from '@/components/Start'
+import Pig from '@/components/Pig'
 
 Vue.use(Router)
 
@@ -17,6 +18,11 @@ export default new Router({
       path: '/todo',
       name: 'Todo',
       component: Todo
+    },
+    {
+      path: '/pig',
+      name: 'Pig Game',
+      component: Pig
     },
     {
       path: '*',

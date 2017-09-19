@@ -12,18 +12,20 @@
       fullscreen
     >
       <v-list dense>
-        <v-list-tile class="mt-3" v-for="item in start" :key="item.text">
+        <v-list-tile class="mt-3" v-for="item in start" :key="item.text" :href='item.link'>
           <v-list-tile-action>
-            <v-icon class="grey--text text--darken-1">{{ item.icon }}</v-icon>
+            <v-icon class="grey--text text--darken-1">
+              {{ item.icon }}
+            </v-icon>
           </v-list-tile-action>
-          <a :href='item.link'>
-            <v-list-tile-title class="grey--text text--darken-1">{{ item.text }}</v-list-tile-title>
-          </a>
+          <v-list-tile-title class="grey--text text--darken-1">
+            {{ item.text }}
+          </v-list-tile-title>
         </v-list-tile>
 
         <v-subheader class="mt-3 grey--text text--darken-1">Projetos</v-subheader>
 
-        <v-list-tile v-for="item in items" :key="item.text">
+        <v-list-tile v-for="item in items" :key="item.text" :href='item.link'>
           <v-list-tile-action>
             <v-icon class="grey--text text--darken-1">{{ item.icon }}</v-icon>
           </v-list-tile-action>
@@ -54,10 +56,23 @@
       over: false,
       drawer: false,
       start: [
-        { icon: 'home', text: 'Home', link: '/'}
+        {
+          icon: 'home',
+          text: 'Home',
+          link: '/'
+        }
       ],
       items: [
-        { icon: 'book', text: 'ToDo List', link: '/todo' },
+        {
+          icon: 'book',
+          text: 'ToDo List',
+          link: '/todo'
+         },
+        {
+          icon: 'cached',
+          text: 'Pig Game',
+          link: '/pig'
+        },
       ]
     })
   }
