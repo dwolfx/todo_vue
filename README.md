@@ -16,7 +16,7 @@ I will add new modules over time.
 #### ToDo List
 ``` bash
 This module was created to learn about JSON LocalStorage.
-Works fine in mobile and desktop.
+Works fine on mobile and desktop.
 ```
 
 #### Pig Game
