@@ -1,11 +1,70 @@
 @import 'caller';
 
 #pig{
+  #menu-top{
+    .toolbar{
+      margin-top: 50% !important;
+    }
+  }
+
+
+
+
+
+
+
+
   .pig-contain{
     padding: {
       top: 10%;
     }
     .pig-row{
+      .flex{
+        padding: 2%;
+      }
+      .panel{
+        background: rgba(255, 255, 255, 0.7);
+        .player-name {
+          font-size: 40px;
+          text-align: center;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          font-weight: 100;
+          margin-top: 20px;
+          margin-bottom: 10px;
+          position: relative;
+        }
+        .player-score {
+          text-align: center;
+          font-size: 80px;
+          font-weight: 100;
+          color: #EB4D4D;
+          margin-bottom: 130px;
+        }
+        .player-current-box {
+          background-color: #EB4D4D;
+          color: #fff;
+          width: 30%;
+          margin: 0 auto;
+          padding: 12px;
+          text-align: center;
+          .player-current-label {
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            font-size: 12px;
+            color: #222;
+          }
+          .player-current-score {
+            font-size: 30px;
+          }
+        }
+        &.winner {
+          background-color: #f7f7f7;
+          .player-name {
+          font-weight: 300; color: #EB4D4D;
+          }
+        }
+      }
       .player-1-panel{
         border-top-left-radius: $border-radius;
         border-bottom-left-radius: $border-radius;
@@ -23,61 +82,14 @@
             font-size: 47px;
             position: absolute;
             color: #EB4D4D;
-            top: -7px;
-            left: 25%;
+            top: -5px;
+            left: 20%;
           }
         }
       }
     }
   }
-}
-
-/**********************************************
-*** PLAYERS
-**********************************************/
-
-.player-name {
-    font-size: 40px;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: 100;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    position: relative;
-}
-
-.player-score {
-    text-align: center;
-    font-size: 80px;
-    font-weight: 100;
-    color: #EB4D4D;
-    margin-bottom: 130px;
-}
-
-
-
-.player-current-box {
-    background-color: #EB4D4D;
-    color: #fff;
-    width: 40%;
-    margin: 0 auto;
-    padding: 12px;
-    text-align: center;
-}
-
-.player-current-label {
-    text-transform: uppercase;
-    margin-bottom: 10px;
-    font-size: 12px;
-    color: #222;
-}
-
-.player-current-score {
-    font-size: 30px;
-}
-
-button {
+  button {
     position: absolute;
     width: 200px;
     left: 50%;
@@ -91,38 +103,39 @@ button {
     cursor: pointer;
     font-weight: 300;
     transition: background-color 0.3s, color 0.3s;
+    &:hover {
+      font-weight: 600;
+      i { margin-right: 20px; }
+    }
+    &:focus {
+      outline: none;
+    }
+    i {
+      color: #EB4D4D;
+      display: inline-block;
+      margin-right: 15px;
+      font-size: 32px;
+      line-height: 1;
+      vertical-align: text-top;
+      margin-top: -4px;
+      transition: margin 0.3s;
+    }
+    &.btn-new {
+      top: 60%;
+    }
+    &.btn-roll {
+      top: 70%;
+    }
+    &.btn-hold {
+      top: 80%;
+    }
+  }
+  .dice {
+      position: absolute;
+      left: 50%;
+      top: 178px;
+      transform: translateX(-50%);
+      height: 100px;
+      box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.10);
+  }
 }
-
-button:hover { font-weight: 600; }
-button:hover i { margin-right: 20px; }
-
-button:focus {
-    outline: none;
-}
-
-i {
-    color: #EB4D4D;
-    display: inline-block;
-    margin-right: 15px;
-    font-size: 32px;
-    line-height: 1;
-    vertical-align: text-top;
-    margin-top: -4px;
-    transition: margin 0.3s;
-}
-
-.btn-new { top: 45px;}
-.btn-roll { top: 403px;}
-.btn-hold { top: 467px;}
-
-.dice {
-    position: absolute;
-    left: 50%;
-    top: 178px;
-    transform: translateX(-50%);
-    height: 100px;
-    box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.10);
-}
-
-.winner { background-color: #f7f7f7; }
-.winner .player-name { font-weight: 300; color: #EB4D4D; }

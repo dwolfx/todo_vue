@@ -38,12 +38,12 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-toolbar>
+    <v-toolbar :class="bgColor"i>
       <v-toolbar-title class="flexbox">
         <v-toolbar-side-icon @click.stop="drawer = !drawer; over = !over"></v-toolbar-side-icon>
         <v-flex flexbox flexcenter>
-          <v-icon>book</v-icon>
-          <p>ToDo List</p>
+          <v-icon>{{icon}}</v-icon>
+          <p>{{title}}</p>
         </v-flex>
       </v-toolbar-title>
     </v-toolbar>
@@ -51,7 +51,7 @@
   </div>
 </template>
 <script>
-  export default {
+  export default ({
     data: () => ({
       over: false,
       drawer: false,
@@ -74,7 +74,24 @@
           link: '/pig'
         },
       ]
-    })
-  }
+    }),
+    props: {
+      title: {
+        type: String,
+        required: false,
+        default: 'New Component'
+      },
+      icon: {
+        type: String,
+        required: false,
+        default: 'grade'
+      },
+      bgColor: {
+        type: String,
+        required: false,
+        default: '#fff'
+      }
+    }
+  })
 </script>
 <style lang="scss" scoped src="../style/scss/menu-top.scss"></style>
