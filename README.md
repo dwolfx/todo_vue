@@ -1,27 +1,30 @@
-# todo_vue
+# Victor 'dWolf' Nogueira
+Front-end Developer
 
-> A Vue.js project
-
-## Build Setup
+São Paulo, Brazil
 
 ``` bash
-# install dependencies
-npm install
+HTML5, CSS3, JavaScript, VueJS, Bootstrap 4, Adobe Experience Design, Adobe Photoshop,
+Adobe Illustrator, 
+```
+# Project to test and improve my knowledge
 
-# serve with hot reload at localhost:8080
-npm run dev
+I will add new modules over time.
 
-# build for production with minification
-npm run build
+## Modules:
 
-# build for production and view the bundle analyzer report
-npm run build --report
-
-# run unit tests
-npm run unit
-
-# run all tests
-npm test
+#### ToDo List
+``` bash
+This module was created to learn about JSON LocalStorage.
+Works fine in mobile and desktop.
 ```
 
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+#### Pig Game
+``` bash
+Simple game using pure JS to compare values with simple rules.
+Archieving  numbers in JSON LocalStorage too.
+```
+
+
+For detailed explanation, contact me:
+ [Facebook](https://www.facebook.com/viictorhu), [Mail](victor9009@gmail.com) or [LinkedIn](https://www.linkedin.com/in/viictorhugo/).
