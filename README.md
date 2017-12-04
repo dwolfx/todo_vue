@@ -1,4 +1,4 @@
-# Victor 'dWolf' Nogueira
+# Victor Hugo Nogueira
 Front-end Developer
 
 São Paulo, Brazil
