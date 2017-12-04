@@ -1,9 +1,14 @@
 <template>
   <div id="pig">
-    <menu-top></menu-top>
+    <menu-top
+      title='Pig Game'
+      icon='cached'
+      bgColor='pig-color'>
+
+      </menu-top>
     <v-container grid-list-md pig-contain>
       <v-layout pig-row>
-        <v-flex md6 player-1-panel active>
+        <v-flex md6 player-1-panel active panel>
           <div class="player-name" id="name-1">Player 1</div>
           <div class="player-score" id="score-1">0</div>
           <div class="player-current-box">
@@ -11,7 +16,7 @@
             <div class="player-current-score" id="current-1">0</div>
           </div>
         </v-flex>
-        <v-flex md6 player-2-panel md4>
+        <v-flex md6 player-2-panel md4 panel>
           <div class="player-name" id="name-2">Player 2</div>
           <div class="player-score" id="score-2">0</div>
           <div class="player-current-box">
@@ -21,7 +26,7 @@
         </v-flex>
       </v-layout>
 
-      <button class="btn-new"><i class="ion-ios-plus-outline"></i>New Game</button>
+      <button class="btn-new" @click="newGame"><i class="ion-ios-plus-outline"></i>New Game</button>
       <button class="btn-roll" @click="diceRoll"><i class="ion-ios-loop"></i>Roll</button>
       <button class="btn-hold" @click="diceHold"><i class="ion-ios-download-outline"></i>Hold</button>
 
@@ -38,7 +43,7 @@
     },
     data() {
       return {
-        score: [10, 10],
+        score: [0, 0],
         roundScore: 0,
         activePlayer: 1,
         dice: [],
@@ -121,6 +126,16 @@
           document.querySelector('.player-2-panel').classList.remove("active");
           document.querySelector('.player-1-panel').classList.remove("active");
         }
+      },
+      newGame() {
+        document.querySelector('.player-'+this.activePlayer+'-panel').classList.remove("winner");
+        document.querySelector('.btn-new').style.display = "none";
+        document.querySelector('.btn-roll').style.display = "block";
+        document.querySelector('.btn-hold').style.display = "block";
+        document.querySelector('.player-1-panel').classList.add("active");
+        this.roundScore = 0;
+        this.score = 0;
+        this.activePlayer = 1;
       }
     }
   }
